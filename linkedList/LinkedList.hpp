@@ -38,9 +38,12 @@ bool LinkedList<T>::search(T value) const
 	Node<T>* temp = m_front;
 	bool isFound = false;
 
-	/** TODO
-		Fix this method
-	*/
+	while(temp != nullptr){
+		if(temp->getValue() == value){
+			isFound = true;
+		}
+		temp=temp->getNext();
+	}
 
 	return(isFound);
 }
@@ -51,8 +54,7 @@ std::vector<T> LinkedList<T>::toVector() const
 	std::vector<T> vec;
 	Node<T>* temp = m_front;
 
-	while( temp != nullptr )
-	{
+	while( temp != nullptr ){
 		vec.push_back(temp->getValue());
 		temp = temp->getNext();
 	}
